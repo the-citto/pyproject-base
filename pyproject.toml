@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "project_name"
+description = "project description"
+version = "0.1.0"
+dependencies = [
+]
+
+authors = [
+    {name = "the-citto", email = "my.email@domain.com"}
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: MIT",
+    "Operating System :: Linux"
+]
+
+[tool.setuptools]
+package-dir = {"" = "python"}
+
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
+exclude = [
+    "__pycache__",
+    ".git",
+    ".venv",
+    "_old",
+    "_tmp",
+]
+
+[tool.ruff]
+exclude = [
+    "__pycache__",
+    ".git",
+    ".venv",
+    "_old",
+    "_tmp",
+]
+line-length = 120
+indent-width = 4
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    "ALL"
+]
+ignore = [
+    "ERA001", # Found commented-out code
+    "TD003", # Missing issue link on the line following this TODO
+]
+
+[tool.ruff.isort]
+known-first-party = ["python"]
+
