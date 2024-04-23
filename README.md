@@ -26,7 +26,7 @@ create package folder **in** `./python/` folder, `pyproject.toml` is set to read
 
      mkdir -p ./python/<project_name>/ && touch $_/__init__.py
 
-**amend project details in ** `README.md`, `LICENSE`, `pyproject.toml`, (if needed) `Makefile`
+**amend details in ** `README.md`, `LICENSE`, `pyproject.toml`, (if needed) `Makefile`
 
 #
 

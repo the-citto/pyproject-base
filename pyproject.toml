@@ -3,7 +3,7 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "project_name"
+name = "pyproject_base"
 description = "project description"
 version = "0.1.0"
 dependencies = [
