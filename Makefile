@@ -35,7 +35,7 @@ dev: requirements
 requirements-tests.txt: pyproject.toml ${VENV}
 	${PYTHONENV} -m piptools compile --extra tests -o requirements-tests.txt pyproject.toml
 
-dev: requirements
+tests: requirements
 	${PYTHONENV} -m piptools sync requirements-tests.txt
 	${PYTHONENV} -m pip install -r requirements-tests.txt -e .[dev]
 
