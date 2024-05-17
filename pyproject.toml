@@ -14,12 +14,23 @@ authors = [
 ]
 readme = "README.md"
 license = { file = "LICENSE" }
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: MIT",
     "Operating System :: Linux"
 ]
+
+[project.optional-dependencies]
+tests = ["pytest"]
+dev = [
+    "pytest",
+    "ipython",
+]
+
+[project.scripts]
+pyproject_base = "pyproject_base:main"
+
 
 [tool.setuptools]
 package-dir = {"" = "python"}
@@ -29,6 +40,10 @@ package-dir = {"" = "python"}
 venvPath = "."
 venv = ".venv"
 
+include = [
+    "python",
+    "tests",
+]
 exclude = [
     "__pycache__",
     ".git",
@@ -47,13 +62,15 @@ exclude = [
 ]
 line-length = 120
 indent-width = 4
-target-version = "py311"
+target-version = "py312"
 
 [tool.ruff.lint]
 select = [
     "ALL"
 ]
 ignore = [
+    # This rule is deprecated and will be removed in a future release.
+    "ANN101", # Missing type annotation for `self` in method
     "ERA001", # Found commented-out code
     "TD003", # Missing issue link on the line following this TODO
 ]
