@@ -31,6 +31,9 @@ dev = [
 [project.scripts]
 pyproject_base = "pyproject_base:main"
 
+[project.gui-scripts]
+pyproject_basew = "pyproject_base:main"
+
 
 [tool.setuptools]
 package-dir = {"" = "python"}
