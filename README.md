@@ -13,6 +13,7 @@ or, for bare repos (in folders)
 
 detach the remote repo
 
+    cd <new-project-name>
     git remote remove origin
 
 add the remote repo for the new project
