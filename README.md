@@ -23,11 +23,31 @@ add the remote repo for the new project
 with `<path-to-new-remote-repo>` being the empty repo for the new python project
 
 #
-create package folder **in** `./python/` folder, `pyproject.toml` is set to read there instead of the standard `./src/`
 
-     mkdir -p ./python/<project_name>/ && touch $_/__init__.py
+**rename folder** 
 
-**amend details in ** `README.md`, `LICENSE`, `pyproject.toml`, (if needed) `Makefile`
+    python/pyproject_base/
+to
 
-#
+    python/<new-project-name>`
+
+**amend project name and details**
+
+**also verify python version in** `pyproject.toml`
+
+    pyproject.toml
+    python/<new-project-name>
+
+**amend as needed**
+
+    README.md
+    LICENSE
+
+**verify python version in**
+
+    Makefile
+
+_TODO: in Makefile, check OS to use py (Windows launcher) or pyenv (Linux)_
+<br>
+      _this is currently manual but the python **version** will still need verifying_
 
