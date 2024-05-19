@@ -24,30 +24,15 @@ with `<path-to-new-remote-repo>` being the empty repo for the new python project
 
 #
 
-**rename folder** 
+**rename folder** `python/pyproject_base/` to `python/<new-project-name>`
 
-    python/pyproject_base/
-to
+**amend project name in** `python/<new-project-name>/__init__.py`
 
-    python/<new-project-name>`
+**amend project name and python _version_ in** `pyproject.toml`
 
-**amend project name and details**
+**amend as needed** `README.md` **and** `LICENSE`
 
-**also verify python version in** `pyproject.toml`
+**amend python version in** `Makefile`
 
-    pyproject.toml
-    python/<new-project-name>
-
-**amend as needed**
-
-    README.md
-    LICENSE
-
-**verify python version in**
-
-    Makefile
-
-_TODO: in Makefile, check OS to use py (Windows launcher) or pyenv (Linux)_
-<br>
-      _this is currently manual but the python **version** will still need verifying_
+_**TODO**: in Makefile, check OS to use py (Windows launcher) or pyenv (Linux) automatically - python **version** will still need manual intervention_
 
