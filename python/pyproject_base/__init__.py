@@ -4,7 +4,7 @@ import importlib.metadata
 
 #
 
-__version__ = importlib.metadata.version("pyproject_base")
+__version__ = importlib.metadata.version(__name__)
 
 __all__ = []
 
