@@ -29,10 +29,10 @@ dev = [
 ]
 
 [project.scripts]
-pyproject_base = "pyproject_base:main"
+pyproject_base = "pyproject_base:__main__.main"
 
 [project.gui-scripts]
-pyproject_basew = "pyproject_base:main"
+pyproject_basew = "pyproject_base:__main__.main"
 
 
 [tool.setuptools]
