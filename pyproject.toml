@@ -55,6 +55,7 @@ exclude = [
     "_tmp",
 ]
 
+
 [tool.ruff]
 exclude = [
     "__pycache__",
