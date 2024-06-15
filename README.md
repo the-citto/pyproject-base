@@ -9,12 +9,14 @@ or, for bare repos (in folders)
     
     git clone --depth 1 file://<full>/<path>/<bare-repo-name>.git <new-project-name>
 
-(if wanted, double check with `git remote` for `origin`)
 
-detach the remote repo
+just detaching the remote repo leaves a shallow repo, so for lack of a more elegant way 
 
     cd <new-project-name>
-    git remote remove origin
+    rm -rf .git
+    git init
+
+---
 
 add the remote repo for the new project
 
@@ -34,5 +36,5 @@ with `<path-to-new-remote-repo>` being the empty repo for the new python project
 
 **amend python version in** `Makefile`
 
-_**TODO**: in Makefile, check OS to use py (Windows launcher) or pyenv (Linux) automatically - python **version** will still need manual intervention_
+_**TODO**: in Makefile, check OS to use py (Windows launcher) or pyenv (Linux) automatically - this will pick default python **version**_
 
