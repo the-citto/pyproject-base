@@ -89,6 +89,6 @@ ignore = [
 ]
 
 [tool.ruff.isort]
-known-first-party = ["python"]
+known-first-party = ["pyproject_base"]
 
 
