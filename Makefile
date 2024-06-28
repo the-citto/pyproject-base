@@ -63,7 +63,7 @@ requirements: requirements.txt requirements-tests.txt requirements-dev.txt
 
 
 $(PIP-COMPILE):
-	$(PYTHON-SYS) -m venv $(VENV)
+	$(PYTHON-SYS) -m venv $(VENV-NAME)
 	$(PYTHON) -m pip install --upgrade pip pip-tools
 
 #
