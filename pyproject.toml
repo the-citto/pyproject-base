@@ -40,6 +40,7 @@ package-dir = {"" = "python"}
 
 
 [tool.pyright]
+# pythonVersion = "3.12"
 venvPath = "."
 venv = ".venv"
 
@@ -55,8 +56,24 @@ exclude = [
     "_tmp",
 ]
 
+[tool.mypy]
+# python_version = "3.12"
+python_executable = ".venv/bin/python"
+exclude = [
+    "__pycache__",
+    ".git",
+    ".venv",
+    "_old",
+    "_tmp",
+]
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+ignore_errors = true
+
 
 [tool.ruff]
+# target-version = "py312"
 exclude = [
     "__pycache__",
     ".git",
@@ -66,7 +83,6 @@ exclude = [
 ]
 line-length = 120
 indent-width = 4
-target-version = "py312"
 
 [tool.ruff.lint]
 select = [
