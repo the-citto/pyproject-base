@@ -92,6 +92,7 @@ ignore = [
     # This rule is deprecated and will be removed in a future release.
     "ANN101", # Missing type annotation for `self` in method
     "ERA001", # Found commented-out code
+    "PLR2044", # Line with empty comment
     "TD003", # Missing issue link on the line following this TODO
 ]
 
