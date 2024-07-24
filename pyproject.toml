@@ -32,7 +32,7 @@ dev = [
 pyproject_base = "pyproject_base:__main__.main"
 
 [project.gui-scripts]
-pyproject_basew = "pyproject_base:__main__.main"
+# pyproject_basew = "pyproject_base:__main__.main"
 
 
 [tool.setuptools]
@@ -91,9 +91,9 @@ select = [
     "ALL"
 ]
 ignore = [
-    "ERA001", # Found commented-out code
-    "PLR2044", # Line with empty comment
-    "TD003", # Missing issue link on the line following this TODO
+    # "ERA001", # Found commented-out code
+    # "PLR2044", # Line with empty comment
+    # "TD003", # Missing issue link on the line following this TODO
 ]
 
 [tool.ruff.per-file-ignores]
