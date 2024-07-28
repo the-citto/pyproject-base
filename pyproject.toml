@@ -107,5 +107,6 @@ ignore = [
 
 [tool.ruff.isort]
 known-first-party = ["pyproject_base"]
+lines-after-imports = 3
 
 
