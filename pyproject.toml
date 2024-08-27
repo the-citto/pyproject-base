@@ -91,7 +91,7 @@ select = [
     "ALL"
 ]
 ignore = [
-    # "ERA001", # Found commented-out code
+    "ERA001", # Found commented-out code
     # "PLR2044", # Line with empty comment
     # "TD003", # Missing issue link on the line following this TODO
 ]
