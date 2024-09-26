@@ -37,25 +37,25 @@ all: requirements
 #
 
 requirements.txt: pyproject.toml $(PIP-COMPILE)
-	$(PYTHON) -m piptools compile -o requirements.txt pyproject.toml
+	$(PYTHON) -m piptools compile -o requirements.txt requirements.in
 
 sync: requirements
 	$(PYTHON) -m piptools sync requirements.txt
 
 
 requirements-dev.txt: pyproject.toml $(PIP-COMPILE)
-	$(PYTHON) -m piptools compile --extra dev -o requirements-dev.txt pyproject.toml
+	$(PYTHON) -m piptools compile -o requirements-dev.txt requirements-dev.in
 
 dev: requirements
-	$(PYTHON) -m piptools sync requirements-dev.txt
+	# $(PYTHON) -m piptools sync requirements-dev.txt
 	$(PYTHON) -m pip install -e .[dev]
 
 
 requirements-tests.txt: pyproject.toml $(PIP-COMPILE)
-	$(PYTHON) -m piptools compile --extra tests -o requirements-tests.txt pyproject.toml
+	$(PYTHON) -m piptools compile -o requirements-tests.txt requirements-tests.in
 
 tests: requirements
-	$(PYTHON) -m piptools sync requirements-tests.txt
+	# $(PYTHON) -m piptools sync requirements-tests.txt
 	$(PYTHON) -m pip install -e .[tests]
 
 
