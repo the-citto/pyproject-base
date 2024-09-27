@@ -29,28 +29,28 @@ PYTHON:= $(BIN-DIR)/python$(EXTENSION)
 
 #
 
-all: requirements/dev.txt
+all: requirements/requirements-dev.txt
 
 #
 
 requirements/requirements.txt: requirements/requirements.in $(PIP-COMPILE)
 	$(PYTHON) -m piptools compile -o requirements/requirements.txt requirements/requirements.in
 
-base: requirements
+base: requirements/requirements.txt
 	$(PYTHON) -m piptools sync requirements/requirements.txt
 
 
-requirements/tests.txt: requirements.txt
-	$(PYTHON) -m piptools compile -o requirements/tests.txt requirements/tests.in
+requirements/requirements-tests.txt: requirements/requirements.txt
+	$(PYTHON) -m piptools compile -o requirements/requirements-tests.txt requirements/requirements-tests.in
 
-tests: requirements
+tests: requirements/requirements.txt
 	$(PYTHON) -m pip install -e .[tests]
 
 
-requirements/dev.txt: requirements/tests.txt
-	$(PYTHON) -m piptools compile -o requirements/dev.txt requirements/dev.in
+requirements/requirements-dev.txt: requirements/requirements-tests.txt
+	$(PYTHON) -m piptools compile -o requirements/requirements-dev.txt requirements/requirements-dev.in
 
-dev: requirements
+dev: requirements/requirements-dev.txt
 	$(PYTHON) -m pip install -e .[dev]
 
 
