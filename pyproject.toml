@@ -32,9 +32,9 @@ pyproject_base = "pyproject_base:__main__.main"
 package-dir = {"" = "python"}
 
 [tool.setuptools.dynamic]
-dependencies = { file = ["requirements.txt"] }
-optional-dependencies.tests = { file = ["requirements-tests.txt"]}
-optional-dependencies.dev = { file = ["requirements-dev.txt"]}
+dependencies = { file = ["requirements/requirements.txt"] }
+optional-dependencies.tests = { file = ["requirements/tests.txt"]}
+optional-dependencies.dev = { file = ["requirements/dev.txt"]}
 
 [tool.setuptools.packages.find]
 where = ["python"]
