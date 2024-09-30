@@ -1,8 +1,8 @@
 
-.PHONY: base
-.PHONY: dev
-.PHONY: tests
-.PHONY: build
+# .PHONY: base
+# .PHONY: dev
+# .PHONY: tests
+# .PHONY: build
 
 
 
