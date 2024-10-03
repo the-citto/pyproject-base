@@ -1,18 +1,15 @@
 
-.PHONY: requirements
-.PHONY: sync
-.PHONY: dev
-.PHONY: tests
-.PHONY: build
+# .PHONY: base
+# .PHONY: dev
+# .PHONY: tests
+# .PHONY: build
 
 
-# project specific variables
 
 PYTHON-VERSION := 3.12
 # OUTDIR := --outdir /path
 
 
-# calculated variables
 
 ifeq ($(OS),Windows_NT)
 	PYTHON-SYS = py -$(PYTHON-VERSION)
@@ -32,34 +29,30 @@ PYTHON:= $(BIN-DIR)/python$(EXTENSION)
 
 #
 
-all: requirements
+all: requirements/requirements-dev.txt
 
 #
 
-requirements.txt: pyproject.toml $(PIP-COMPILE)
-	$(PYTHON) -m piptools compile -o requirements.txt pyproject.toml
+requirements/requirements.txt: requirements/requirements.in $(PIP-COMPILE)
+	$(PYTHON) -m piptools compile -o requirements/requirements.txt requirements/requirements.in
 
-sync: requirements
-	$(PYTHON) -m piptools sync requirements.txt
-
-
-requirements-dev.txt: pyproject.toml $(PIP-COMPILE)
-	$(PYTHON) -m piptools compile --extra dev -o requirements-dev.txt pyproject.toml
-
-dev: requirements
-	$(PYTHON) -m piptools sync requirements-dev.txt
-	$(PYTHON) -m pip install -e .[dev]
+base: requirements/requirements.txt
+	$(PYTHON) -m piptools sync requirements/requirements.txt
 
 
-requirements-tests.txt: pyproject.toml $(PIP-COMPILE)
-	$(PYTHON) -m piptools compile --extra tests -o requirements-tests.txt pyproject.toml
+requirements/requirements-tests.txt: requirements/requirements.txt
+	$(PYTHON) -m piptools compile -o requirements/requirements-tests.txt requirements/requirements-tests.in
 
-tests: requirements
-	$(PYTHON) -m piptools sync requirements-tests.txt
+tests: requirements/requirements.txt
 	$(PYTHON) -m pip install -e .[tests]
 
 
-requirements: requirements.txt requirements-tests.txt requirements-dev.txt 
+requirements/requirements-dev.txt: requirements/requirements-tests.txt
+	$(PYTHON) -m piptools compile -o requirements/requirements-dev.txt requirements/requirements-dev.in
+
+dev: requirements/requirements-dev.txt
+	$(PYTHON) -m pip install -e .[dev]
+
 
 
 $(PIP-COMPILE):
@@ -68,7 +61,7 @@ $(PIP-COMPILE):
 
 #
 
-build: sync
+build: base
 	$(PYTHON) -m build $(OUTDIR)
 	@echo
 	@echo run make dev to continue development

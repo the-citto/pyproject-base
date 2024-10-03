@@ -6,8 +6,6 @@ build-backend = "setuptools.build_meta"
 name = "pyproject_base"
 description = "project description"
 version = "0.1.0"
-dependencies = [
-]
 
 authors = [
     {name = "the-citto", email = "my.email@domain.com"}
@@ -21,12 +19,7 @@ classifiers = [
     "Operating System :: Linux"
 ]
 
-[project.optional-dependencies]
-tests = ["pytest"]
-dev = [
-    "pytest",
-    "ipython",
-]
+dynamic = ["dependencies", "optional-dependencies"]
 
 [project.scripts]
 pyproject_base = "pyproject_base:__main__.main"
@@ -38,8 +31,14 @@ pyproject_base = "pyproject_base:__main__.main"
 [tool.setuptools]
 package-dir = {"" = "python"}
 
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements/requirements.txt"] }
+optional-dependencies.tests = { file = ["requirements/requirements-tests.txt"]}
+optional-dependencies.dev = { file = ["requirements/requirements-dev.txt"]}
+
 [tool.setuptools.packages.find]
 where = ["python"]
+
 
 [tool.pyright]
 # pythonVersion = "3.12"

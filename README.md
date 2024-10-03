@@ -23,4 +23,10 @@ verify python version in `Makefile`
 amend `README.md` and `LICENSE`
 #
 
+# References
+
+[pyproject dynamic optional-dependencies](https://stackoverflow.com/a/76771725/15446311)
+
+[pip-tools constraint optional dependencies](https://github.com/jazzband/pip-tools/issues/1020)
+
 
