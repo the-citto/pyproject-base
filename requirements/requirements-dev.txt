@@ -14,7 +14,7 @@ iniconfig==2.0.0
     # via
     #   -r requirements/requirements-tests.txt
     #   pytest
-ipython==8.27.0
+ipython==8.28.0
     # via -r requirements/requirements-dev.in
 jedi==0.19.1
     # via ipython
@@ -22,7 +22,6 @@ matplotlib-inline==0.1.7
     # via ipython
 packaging==24.1
     # via
-    #   -c requirements/requirements.txt
     #   -r requirements/requirements-tests.txt
     #   pytest
 parso==0.8.4
