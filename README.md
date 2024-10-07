@@ -1,8 +1,10 @@
 # pyproject-base
 
-follow [Creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
+following development of [uv](https://docs.astral.sh/uv/), which aims to likely replace this whole workflow
 
-_GitHub CLI snippets coming soon_
+one of the most interesting aspects to me would be having the same commands multiplatform (ex. *nix `pyenv` vs Windows `py` launcher)
+
+also following controversies (similarly to [ruff](https://docs.astral.sh/ruff/)'s)
 
 #
 
