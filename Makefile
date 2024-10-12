@@ -61,11 +61,8 @@ $(PIP-COMPILE):
 
 #
 
-build: base
+build: dev
 	$(PYTHON) -m build $(OUTDIR)
-	@echo
-	@echo run make dev to continue development
-	@echo
 
 
 
