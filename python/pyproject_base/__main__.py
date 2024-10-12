@@ -1,7 +1,7 @@
 """Module main."""
 
 
-#
+
 
 def main() -> None:
     """Run main module function."""
