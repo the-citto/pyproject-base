@@ -40,6 +40,14 @@ optional-dependencies.dev = { file = ["requirements/requirements-dev.txt"]}
 where = ["python"]
 
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+
+[tool.coverage.run]
+omit = ["tests/*"]
+
+
 [tool.pyright]
 # pythonVersion = "3.12"
 venvPath = "."
