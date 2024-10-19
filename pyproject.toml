@@ -42,11 +42,11 @@ where = ["python"]
 
 [tool.pytest.ini_options]
 addopts = "--no-header -vv --tb=no --cov"
-testpaths = ["tests"]
+testpaths = ["python/tests"]
 
 
 [tool.coverage.run]
-omit = ["*/tests/*"]
+omit = ["python/tests/*"]
 
 
 [tool.pyright]
