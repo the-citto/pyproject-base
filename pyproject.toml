@@ -46,7 +46,7 @@ testpaths = ["tests"]
 
 
 [tool.coverage.run]
-omit = ["tests/*"]
+omit = ["*/tests/*"]
 
 
 [tool.pyright]
