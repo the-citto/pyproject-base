@@ -44,13 +44,8 @@ where = ["python"]
 
 
 [tool.pytest.ini_options]
-<<<<<<< HEAD
 addopts = "--strict-markers --no-header --tb=no --cov --cov-report term-missing"
 testpaths = ["tests"]
-=======
-addopts = "--no-header -vv --tb=no --cov"
-testpaths = ["python/tests"]
->>>>>>> 32fa6264af3f08bd52a6aa22c42da35a55da7118
 
 
 [tool.coverage.run]
