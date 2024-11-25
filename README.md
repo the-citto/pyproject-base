@@ -18,9 +18,7 @@ in `pyproject.toml`
     - `classifiers`
  - verify LSPs and linters settings
 #
-amend 
-#
-verify python version in `Makefile`
+amend `.python-version`
 #
 amend `README.md` and `LICENSE`
 #

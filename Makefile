@@ -6,7 +6,7 @@
 
 
 
-PYTHON-VERSION := 3.12
+PYTHON-VERSION := $(file < .python-version)
 # OUTDIR := --outdir /path
 
 
